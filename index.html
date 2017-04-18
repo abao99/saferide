@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安騎</title>
+        <!-- Bootstrap的css樣式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自訂的css樣式 -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Google Map的js函式庫 -->
+    <script type='text/javascript' src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <!-- jQuery函式庫 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap的js函式庫 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 自訂的js程式碼檔案 -->
+    <script src="js/custom.js"></script>
+    
+</head>
+
+<body>
+  <!-- 第1個區塊 - 首頁 -->
+  
+  <div id="about" class="about-brightness">
+   <a href="./about.html" onMouseOver="$(&quot;#about&quot;).attr(&quot;class&quot;,&quot;about-bright&quot;);" onMouseOut="$(&quot;#about&quot;).attr(&quot;class&quot;,&quot;about-brightness&quot;);"> 
+    <div class="text-about">
+      <h1>ABOUT</h1>
+    </div>
+   </a>
+  </div>
+  
+<!-- 第1個區塊 -->
+
+  <!-- 第2個區塊 - 關於我們 -->
+  <div id="new" class="top-bottom-pad new-brightness">
+    <a href="./new.html" onMouseOver="$(&quot;#new&quot;).attr(&quot;class&quot;,&quot;new-bright&quot;);" onMouseOut="$(&quot;#new&quot;).attr(&quot;class&quot;,&quot;new-brightness&quot;);">  
+      <div class="text-new">
+      	<h1>NEW</h1>
+      </div>
+    </a>
+  </div>
+  <!-- 第2個區塊 -->
+
+
+  <!-- 第3個區塊 -->
+  <div id="product" class="top-bottom-pad product-brightness">
+    <a href="./product.html" onMouseOver="$(&quot;#product&quot;).attr(&quot;class&quot;,&quot;product-bright&quot;);" onMouseOut="$(&quot;#product&quot;).attr(&quot;class&quot;,&quot;product-brightness&quot;);">  
+      <div class="text-new">
+        <h1>PROUDUCT</h1>
+      </div>
+    </a>
+  </div>
+  <!-- 第3個區塊 -->
+
+  <!-- 第4個區塊 -->
+  <div id="contact" class="top-bottom-pad contact-brightness">
+    <a href="./contact.html" onMouseOver="$(&quot;#contact&quot;).attr(&quot;class&quot;,&quot;contact-bright&quot;);" onMouseOut="$(&quot;#contact&quot;).attr(&quot;class&quot;,&quot;contact-brightness&quot;);">  
+      <div class="text-new">
+        <h1>CONTACT</h1>
+      </div>
+    </a>
+  </div>
+  <!-- 第4個區塊 -->
+
+  <!-- 選單導航列 -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar navbar-inverse" >
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <!--給手機按鈕使用的-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <!--給手機按鈕使用的-->
+
+        <!--  網站的Logo -->
+          <a class="navbar-brand" href="http://www.saferide.byethost9.com/">
+            <img src="./images/logolight.png"  style="width: 30%; height: 50px;">
+          </a>
+        <!--  網站的Logo -->
+
+      </div>
+
+      <!-- 一般用的網站選單列 -->
+      <div id="navbar" class="navbar-collapse collapse ">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#about">關於我們</a></li>
+            <li><a href="#new">最新資訊</a></li>
+          <li><a href="#product">產品介紹</a></li>
+            <li><a href="#contact">連絡我們</a></li>
+        </ul>
+      </div>
+      <!-- 一般用的網站選單列 -->
+
+      </div>
+
+    </nav>
+    <!-- 選單導航列 -->
+
+   
+
+<!-- 頁腳(footer) -->
+<footer>
+  <div class="container">
+    <p>電話：(06)12345678 電子郵件：service@test.com</p>
+    <p class="text-right">版權所有 &copy; 我的公司 2016</p>
+  </div>
+</footer>
+<!-- 頁腳(footer) -->
+
+<!-- 回到上方的連結 -->
+<ul class="nav pull-right scroll-top">
+  <li><a href="#about" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
+<!-- 回到上方的連結 -->
+</body>
+</html>

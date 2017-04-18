@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安騎</title>
+        <!-- Bootstrap的css樣式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自訂的css樣式 -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Google Map的js函式庫 -->
+    <script type='text/javascript' src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <!-- jQuery函式庫 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap的js函式庫 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 自訂的js程式碼檔案 -->
+    <script src="js/custom.js"></script>
+    
+</head>
+<script type="text/javascript">
+  /* Ajax info new */
+  
+    $.ajax({
+      type:"POST",
+      url:"./php/select_new.php",
+      dataType:"json",
+      
+      success:showval,
+      
+      error:function(data){
+        alert("error");
+      },
+    });
+  
+    function showval(data){
+      
+      var msg1=[];
+      var msg2="";
+      
+      for(i=0;i<data.length;i++){
+        msg1[i] ='<div class="item">'+
+                '<div class="panel panel-warning">'+
+                  '<div class="panel-heading">'+
+                    '<h2 class="panel-title">'+data[i].news_title + '</h2>'+
+                  '</div>'+
+                  '<div class="panel-body lead">'+
+                    data[i].news_content+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+
+        msg2 += '<li class="list-group-item">'+
+                  data[i].news_title+
+                    '</li>';
+        
+      if(i==0)
+        $("#msg0").html(msg1[i]);
+
+      if(i==1)
+        $("#msg1").html(msg1[i]);
+
+      if(i==2)
+        $("#msg2").html(msg1[i]);
+
+      if(i==3)
+        $("#msg3").html(msg1[i]);
+      }
+      $("#list1").html(msg2);   
+    };
+    /* Ajax info new */
+
+</script>
+<body>
+  <!-- 第1個區塊 - 首頁 -->
+  <!-- 第4個區塊：最新資訊 -->
+<div id="info" class="top-bottom-pad">
+  <hr style="color: #fff; width: 65%">
+  <div class="container">
+    <div id="content" class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-info">
+            <!-- Default panel contents -->
+          <div class="panel-heading">最新消息</div>
+          <div class="panel-body">
+              <p class="lead">安騎購物最新優惠</p>
+           </div>
+
+          <!-- List group -->
+        <ul class="list-group" id="list1">
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    
+    <div id="msg0" class="item active">
+      
+    </div>
+    <div id="msg1" class="item">
+      
+    </div>
+    <div id="msg2" class="item">
+      
+    </div>
+    <div id="msg3" class="item">
+      
+    </div>
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+     </div>
+    </div><!-- end row -->
+  </div>
+</div>
+<!-- 第4個區塊 -->
+  
+  <!-- 選單導航列 -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar navbar-inverse" >
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <!--給手機按鈕使用的-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <!--給手機按鈕使用的-->
+
+        <!--  網站的Logo -->
+          <a class="navbar-brand" href="./index.html">
+            <img src="./images/logolight.png"  style="width: 30%; height: 50px;">
+          </a>
+        <!--  網站的Logo -->
+
+      </div>
+
+      <!-- 一般用的網站選單列 -->
+      <div id="navbar" class="navbar-collapse collapse ">
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a href="./about.html">關於我們</a></li>
+            <li class="active"><a href="./new.html">最新資訊</a></li>
+          <li><a href="./product.html">產品介紹</a></li>
+            <li><a href="./contact.html">連絡我們</a></li>
+        </ul>
+      </div>
+      <!-- 一般用的網站選單列 -->
+
+      </div>
+
+    </nav>
+    <!-- 選單導航列 -->
+
+   
+
+<!-- 頁腳(footer) -->
+<footer>
+  <div class="container">
+    <p>電話：(06)12345678 電子郵件：service@test.com</p>
+    <p class="text-right">版權所有 &copy; 我的公司 2016</p>
+  </div>
+</footer>
+<!-- 頁腳(footer) -->
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安騎</title>
+        <!-- Bootstrap的css樣式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自訂的css樣式 -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Google Map的js函式庫 -->
+    <script type='text/javascript' src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <!-- jQuery函式庫 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap的js函式庫 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 自訂的js程式碼檔案 -->
+    <script src="js/custom.js"></script>
+</head>
+<script type="text/javascript">
+  /* Ajax product_T */
+  function product_T(){
+    $.ajax({
+      type:"POST",
+      url:"./php/select_product_T.php",
+      dataType:"json",
+      
+      success:showT,
+      
+      error:function(data){
+        alert("error");
+      },
+    });
+  }
+    function showT(data){
+      
+      var msg1="";
+      var msg2="";
+      for(i=0;i<data.length;i++){
+        if(i<4){
+        msg1 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'; 
+        }
+
+        if(i>=4){
+          msg2 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+        }    
+      }
+     $("#productT").html(msg1);
+     $("#productT1").html(msg2);
+    }
+     /*Ajax product_T */
+
+     /* Ajax product_M */
+  function product_M(){
+    $.ajax({
+      type:"POST",
+      url:"./php/select_product_M.php",
+      dataType:"json",
+      
+      success:showM,
+      
+      error:function(data){
+        alert("error");
+      },
+    });
+  }
+    function showM(data){
+      
+      var msg1="";
+      var msg2="";
+      for(i=0;i<data.length;i++){
+        if(i<4){
+        msg1 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'; 
+        }
+
+        if(i>=4){
+          msg2 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+        }    
+      }
+     $("#productM").html(msg1);
+     $("#productM1").html(msg2);
+    }
+     /*Ajax product_M */
+
+      /* Ajax product_F */
+  function product_F(){
+    $.ajax({
+      type:"POST",
+      url:"./php/select_product_F.php",
+      dataType:"json",
+      
+      success:showF,
+      
+      error:function(data){
+        alert("error");
+      },
+    });
+  }
+    function showF(data){
+      
+      var msg1="";
+      var msg2="";
+      for(i=0;i<data.length;i++){
+        if(i<4){
+        msg1 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>'; 
+        }
+
+        if(i>=4){
+          msg2 +='<div class="col-xs-6 col-md-3">'+
+                '<div class="thumbnail">'+
+                  '<a href="./productimg/'+data[i].img+'" target="_blank">'+
+                    '<img src="./productimg/'+data[i].img+'" data-src="holder.js/100x180">'+
+                  '</a>'+
+                  '<div class="caption">'+
+                    '<p>'+
+                      data[i].name+'<br>'+data[i].number+'<br>'+data[i].descripe+
+                    '</p>'+
+                    '<p>'+
+                      '<a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">'+
+                        '購物車'+
+                      '</a>'+
+                    '</p>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+        }    
+      }
+     $("#productF").html(msg1);
+     $("#productF1").html(msg2);
+    }
+     /*Ajax product_F */
+</script>
+<body onload="product_T()">
+  <!-- 第1個區塊 - 首頁 -->
+  <div role="tabpanel" class="product-tab">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist" id="myTab">
+    <li role="presentation" class="active"><a href="#T" aria-controls="T" role="tab" data-toggle="tab">喇叭</a></li>
+    <li role="presentation">
+      <a href="#M" aria-controls="M" role="tab" data-toggle="tab" onclick="product_M()">
+        後照鏡
+      </a>
+    </li>
+    <li role="presentation">
+      <a href="#F" aria-controls="F" role="tab" data-toggle="tab" onclick="product_F()">
+        旗桿
+      </a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content top-bottom-pad">
+    <div role="tabpanel" class="tab-pane active" id="T">
+      <div id="productT" class="row" > 
+        
+      </div>
+
+      <div id="productT1" class="row">
+        
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="M">
+      <div id="productM" class="row" >
+      </div>
+      <div id="productM1" class="row">
+        
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="F">
+      <div id="productF" class="row" >
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <a href="./images/bg2.jpg" target="_blank">
+              <img src="./images/bg2.jpg" data-src="holder.js/100%x180">
+            </a>
+            <div class="caption">
+              <p>
+                Lorem ipsum donec id elit non mi porta gravida at eget metus.
+                </p>
+              <p>
+                <a href="http://www.saferide.byethost9.com/shop" class="btn btn-success" role="button">
+                  購物車
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="productF1" class="row">  
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- 選單導航列 -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar navbar-inverse" >
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <!--給手機按鈕使用的-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <!--給手機按鈕使用的-->
+
+        <!--  網站的Logo -->
+          <a class="navbar-brand" href="./index.html">
+            <img src="./images/logolight.png"  style="width: 30%; height: 50px;">
+          </a>
+        <!--  網站的Logo -->
+
+      </div>
+
+      <!-- 一般用的網站選單列 -->
+      <div id="navbar" class="navbar-collapse collapse ">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="./about.html">關於我們</a></li>
+            <li><a href="./new.html">最新資訊</a></li>
+          <li class="active"><a href="./product.html">產品介紹</a></li>
+            <li><a href="./contact.html">連絡我們</a></li>
+        </ul>
+      </div>
+      <!-- 一般用的網站選單列 -->
+
+      </div>
+
+    </nav>
+    <!-- 選單導航列 -->
+
+   
+
+<!-- 頁腳(footer) -->
+<footer>
+  <div class="container">
+    <p>電話：(06)12345678 電子郵件：service@test.com</p>
+    <p class="text-right">版權所有 &copy; 我的公司 2016</p>
+  </div>
+</footer>
+<!-- 頁腳(footer) -->
+</body>
+</html>
